@@ -1,0 +1,38 @@
+{
+  "name": "sl-guard",
+  "version": "0.1.0",
+  "description": "Code contracts / guard implementation.",
+  "license": "MIT",
+
+  "main": "lib/guard.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiftylogic/guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shiftylogic/guard/issues"
+  },
+  "keywords": [
+    "contracts",
+    "guard",
+    "validation"
+  ],
+
+  "homepage": "https://github.com/shiftylogic/dev-proxy",
+  "contributors": [
+    {
+      "name": "Robert Anderson",
+      "email": "robert@shiftylogic.com",
+      "url": "http://www.shiftylogic.com"
+    }
+  ],
+
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1"
+  }
+}

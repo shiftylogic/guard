@@ -24,9 +24,9 @@ THE SOFTWARE.
 
 */
 
-describe('Guard tests', function () {
-    'use strict';
+'use strict';
 
+describe('Guard tests', function () {
     var expect = require('chai').expect,
         guard = require('../lib/guard.js');
 

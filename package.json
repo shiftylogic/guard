@@ -6,6 +6,7 @@
 
   "main": "lib/guard.js",
   "scripts": {
+    "eslint": "eslint lib test",
     "test": "mocha test"
   },
 
@@ -33,6 +34,13 @@
 
   "devDependencies": {
     "chai": "^2.2.0",
-    "mocha": "^2.2.1"
-  }
+    "eslint": "^0.18.0",
+    "mocha": "^2.2.1",
+    "pre-commit": "^1.0.6"
+  },
+
+  "pre-commit": [
+    "eslint",
+    "test"
+  ]
 }

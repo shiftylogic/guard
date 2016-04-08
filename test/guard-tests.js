@@ -52,6 +52,18 @@ describe('Guard tests', function () {
             }, {
                 title: 'in set (middle)',
                 contract: guard('third').isString().isIn(['first', 'second', 'third', 'last'])
+            }, {
+                title: 'equality',
+                contract: guard('dude').isString().isEqual('dude')
+            }, {
+                title: 'inequality',
+                contract: guard('dude').isString().isNotEqual('dudette')
+            }, {
+                title: 'truthy',
+                contract: guard('haha').isString().isTruthy()
+            }, {
+                title: 'falsy',
+                contract: guard('').isString().isFalsy()
             }];
 
         checks.forEach(function (item) {
@@ -85,6 +97,22 @@ describe('Guard tests', function () {
             }, {
                 title: 'not in set',
                 contract: guard('me').isString().isIn(['first', 'second', 'third', 'last']),
+                error: Error
+            }, {
+                title: 'equality',
+                contract: guard('hahaha').isString().isEqual('hohoho'),
+                error: Error
+            }, {
+                title: 'inequality',
+                contract: guard('hahaha').isString().isNotEqual('hahaha'),
+                error: Error
+            }, {
+                title: 'truthy',
+                contract: guard('').isString().isTruthy(),
+                error: Error
+            }, {
+                title: 'falsy',
+                contract: guard('dude').isString().isFalsy(),
                 error: Error
             }];
 
@@ -126,6 +154,24 @@ describe('Guard tests', function () {
             }, {
                 title: 'in range exclusive (end)',
                 contract: guard(99).isNumber().isInRangeExclusive(0, 100)
+            }, {
+                title: 'zero',
+                contract: guard(0).isNumber().isZero()
+            }, {
+                title: 'non-zero',
+                contract: guard(3).isNumber().isNonZero()
+            }, {
+                title: 'truthy',
+                contract: guard(42).isNumber().isTruthy()
+            }, {
+                title: 'falsy',
+                contract: guard(0).isNumber().isFalsy()
+            }, {
+                title: 'equality',
+                contract: guard(1283674).isNumber().isEqual(1283674)
+            }, {
+                title: 'inequality',
+                contract: guard(341324).isNumber().isNotEqual(8976)
             }];
 
         checks.forEach(function (item) {
@@ -179,6 +225,30 @@ describe('Guard tests', function () {
             }, {
                 title: 'in range exclusive (above)',
                 contract: guard(100).isNumber().isInRangeExclusive(1, 100),
+                error: Error
+            }, {
+                title: 'zero',
+                contract: guard(2).isNumber().isZero(),
+                error: Error
+            }, {
+                title: 'non-zero',
+                contract: guard(0).isNumber().isNonZero(),
+                error: Error
+            }, {
+                title: 'truthy',
+                contract: guard(0).isNumber().isTruthy(),
+                error: Error
+            }, {
+                title: 'falsy',
+                contract: guard(43).isNumber().isFalsy(),
+                error: Error
+            }, {
+                title: 'equality',
+                contract: guard(312).isNumber().isEqual(123),
+                error: Error
+            }, {
+                title: 'inequality',
+                contract: guard(8976).isNumber().isNotEqual(8976),
                 error: Error
             }];
 
